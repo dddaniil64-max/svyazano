@@ -1,7 +1,7 @@
 {
   // Имя воркера = часть адреса сайта: https://<name>.<ваш-поддомен>.workers.dev
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "Svyazano",
+  "name": "svyazano",
   "main": "src/index.js",
   "compatibility_date": "2026-10-01",
   "assets": {
