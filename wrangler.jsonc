@@ -1,0 +1,17 @@
+{
+  // Имя воркера = часть адреса сайта: https://<name>.<ваш-поддомен>.workers.dev
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "svyazano",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    // Эти адреса обрабатывает код воркера; всё остальное — бесплатные статические файлы
+    "run_worker_first": ["/api/*", "/img/*"]
+  },
+  // База данных D1: создаётся автоматически при первом деплое (если не создалась — см. docs/01-ЗАПУСК.md, раздел «Если база не создалась»)
+  "d1_databases": [{ "binding": "DB", "database_name": "svyazano-db", "database_id": "94dd4b1f-c0d9-4174-aa6d-4d532b3d0142" }],
+  "observability": { "enabled": true }
+}
